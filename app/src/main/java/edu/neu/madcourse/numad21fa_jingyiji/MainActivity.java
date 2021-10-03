@@ -24,6 +24,11 @@ public class MainActivity extends AppCompatActivity {
         toast.show();
     }
 
+    public void linkCollector(View view) {
+        Intent intent = new Intent(this, LinkCollector.class);
+        startActivity(intent);
+    }
+
     public void Clicky(View view) {
         Intent intent = new Intent(this, ClickyClicky.class);
         startActivity(intent);

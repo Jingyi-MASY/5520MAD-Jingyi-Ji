@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMAD21Fa_JingyiJi">
         <activity
+            android:name=".Input"
+            android:exported="true" />
+        <activity
+            android:name=".LinkCollector"
+            android:exported="true" />
+        <activity
             android:name=".ClickyClicky"
             android:parentActivityName=".MainActivity" />
         <activity
