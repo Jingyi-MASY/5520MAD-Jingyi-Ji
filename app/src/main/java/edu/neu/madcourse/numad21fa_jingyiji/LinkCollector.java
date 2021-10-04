@@ -15,6 +15,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -73,7 +74,20 @@ public class LinkCollector extends AppCompatActivity {
                 itemList.get(position).onItemClick(position);
                 viewAdapter.notifyItemChanged(position);
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(itemList.get(position).getItemLink()));
-                startActivity(browserIntent);
+                if (browserIntent.resolveActivity(getPackageManager()) != null) {
+                    startActivity(browserIntent);
+                } else {
+                    String[] pre = new String[]{"https://", "http://", "https://www.", "http://www."};
+                    int i = 0;
+                    while(browserIntent.resolveActivity(getPackageManager()) == null && i < 4) {
+                        Log.d("jj", pre[i] + itemList.get(position).getItemLink());
+                        browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(pre[i] + itemList.get(position).getItemLink()));
+                        i++;
+                    }
+                    if (browserIntent.resolveActivity(getPackageManager()) != null) {
+                        startActivity(browserIntent);
+                    }
+                }
             }
         };
         viewAdapter.setOnItemClickListener(itemClickListener);
