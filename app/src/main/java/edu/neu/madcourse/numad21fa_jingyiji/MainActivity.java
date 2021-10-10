@@ -33,4 +33,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ClickyClicky.class);
         startActivity(intent);
     }
+
+    public void Location(View view) {
+        Intent intent = new Intent(this, Location.class);
+        startActivity(intent);
+    }
+
 }

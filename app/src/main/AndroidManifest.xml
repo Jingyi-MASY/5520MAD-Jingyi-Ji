@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.neu.madcourse.numad21fa_jingyiji">
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <application
         android:allowBackup="true"
@@ -9,6 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_jj_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMAD21Fa_JingyiJi">
+
+        <activity
+            android:name=".Location"
+            android:exported="true" />
+        <service
+            android:name=".Location"
+            android:enabled="true"
+            android:exported="true" />
         <activity
             android:name=".Input"
             android:exported="true" />
