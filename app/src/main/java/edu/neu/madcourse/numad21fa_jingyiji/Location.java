@@ -36,8 +36,8 @@ public class Location extends AppCompatActivity implements LocationListener {
         latitude = location.getLatitude();
         longitude = location.getLongitude();
 
-        txtLa.setText(String.format("%.2f", latitude));
-        txtLo.setText(String.format("%.2f", longitude));
+        txtLa.setText("Latitude:" + String.format("%.2f", latitude));
+        txtLo.setText("Longitude:" + String.format("%.2f", longitude));
 
         locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
     }
@@ -47,8 +47,8 @@ public class Location extends AppCompatActivity implements LocationListener {
         latitude = location.getLatitude();
         longitude = location.getLongitude();
 
-        txtLa.setText(String.format("%.2f", latitude));
-        txtLo.setText(String.format("%.2f", longitude));
+        txtLa.setText("Latitude:" + String.format("%.2f", latitude));
+        txtLo.setText("Longitude:" + String.format("%.2f", longitude));
 
         //stop update
         //locationManager.removeUpdates(this);

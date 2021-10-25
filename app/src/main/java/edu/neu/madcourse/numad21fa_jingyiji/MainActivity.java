@@ -39,4 +39,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void Web(View view) {
+        Intent intent = new Intent(this, Web.class);
+        startActivity(intent);
+    }
+
 }
